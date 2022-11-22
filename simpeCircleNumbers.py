@@ -26,8 +26,8 @@ a = [i for i in range(n + 1)]
 list_circle_numbers = []
 counter = 0
 
-for i in range(n):
-    if a[i] != 0 and is_simple(a[i]) and is_circle_simple(a[i]):
+for i in range(1, n):
+    if is_simple(a[i]) and is_circle_simple(a[i]):
         list_circle_numbers.append(a[i])
         counter += 1
 
