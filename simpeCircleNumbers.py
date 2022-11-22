@@ -22,12 +22,14 @@ def is_circle_simple(number):
     return True
 n = 1000000
 a = [i for i in range(n + 1)]
-print(a)
 
+list_circle_numbers = []
 counter = 0
 
 for i in range(n):
     if a[i] != 0 and is_simple(a[i]) and is_circle_simple(a[i]):
+        list_circle_numbers.append(a[i])
         counter += 1
 
-print(counter)
+print(f"Все круговые числа:\n{list_circle_numbers}")
+print(f"Количество простых круговых чисел: {counter}")
