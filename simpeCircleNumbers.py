@@ -1,3 +1,5 @@
+import time
+
 
 def is_simple(number):
     if number == 2 or number == 3:
@@ -25,16 +27,20 @@ def is_circle_simple(number):
     return True
 
 
+time_start = time.perf_counter()
+
 n = 1000000
-a = [i for i in range(n + 1)]
 
 list_circle_numbers = []
 counter = 0
 
 for i in range(1, n):
-    if is_simple(a[i]) and is_circle_simple(a[i]):
-        list_circle_numbers.append(a[i])
+    if is_simple(i) and is_circle_simple(i):
+        list_circle_numbers.append(i)
         counter += 1
 
 print(f"Все круговые числа:\n{list_circle_numbers}")
 print(f"Количество простых круговых чисел: {counter}")
+
+time_elapsed = (time.perf_counter() - time_start)
+print("%5.1f secs" % (time_elapsed))
